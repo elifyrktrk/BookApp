@@ -4,11 +4,12 @@ import {WidgetTitle, BookSmall} from '../components';
 import colors from "../consts/colors";
 
 
-function ListBookVertical({style, widgetTitle}){
+function ListBookVertical({style, widgetTitle, library}){
     return(
         <View style={[styles.list, {...style}]}>
             <WidgetTitle title={widgetTitle} style={styles.WidgetTitle}/>
             <BookSmall
+                    library={library}
                     style={styles.bookSmall} 
                     data={{
                         name: 'Ben Kirke',
@@ -18,6 +19,7 @@ function ListBookVertical({style, widgetTitle}){
                     }}
                 />
                 <BookSmall 
+                    library={library}
                     style={styles.bookSmall} 
                     data={{
                         name: 'Şeker Portakalı',
@@ -27,6 +29,7 @@ function ListBookVertical({style, widgetTitle}){
                     }}
                 />
                 <BookSmall
+                    library={library}
                     style={styles.bookSmall} 
                     data={{
                         name: 'Bilinçaltının Gücü',
@@ -36,6 +39,7 @@ function ListBookVertical({style, widgetTitle}){
                     }}
                 />
                 <BookSmall
+                    library={library}
                     style={styles.bookSmall} 
                     data={{
                         name: 'Hayır Diyebilme Sanatı',

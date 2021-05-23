@@ -10,7 +10,7 @@ function CategoryDetail({route, widgetTitle}){
             <StatusBar barStyle={'light-content'} backgroundColor={colors.primary}/>
             <Header title ={data.name} />
             <ScrollView style = {styles.container}>
-                <ListBookVertical widgetTitle={data.name + ' kitapları:'} style={styles.verticalList} /> 
+                <ListBookVertical widgetTitle={data.name + ' türündeki kitaplar:'} style={styles.verticalList} /> 
             </ScrollView>
         </SafeAreaView>
     );
