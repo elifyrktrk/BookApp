@@ -1,13 +1,25 @@
 import React from "react";
-import {View, Text, StyleSheet ,StatusBar, SafeAreaView} from "react-native";
+import {View, ScrollView, StyleSheet ,StatusBar, SafeAreaView} from "react-native";
 import colors from '../consts/colors';
-import {Header} from '../components';
+import {
+    Header, 
+    ListBookHorizontal, 
+    ListBookVertical,
+    WidgetTitle,
+} from '../components';
 
 function Home(){
     return(
-        <SafeAreaView>
-            <StatusBar barStyle={'light-content'} backgroundColor={colors.primary}/>
+        <SafeAreaView style={styles.container}>
+            <StatusBar 
+                barStyle={'light-content'} 
+                backgroundColor={colors.primary}
+            />
             <Header title ={'Anasayfa'} />
+            <ScrollView style={styles.container}>
+                <ListBookHorizontal widgetTitle={'Öne çıkanlar'} style={styles.horizontalList} /> 
+                <ListBookVertical widgetTitle={'Son eklenenler'} style={styles.verticalList} /> 
+            </ScrollView>
         </SafeAreaView>
     );
 }
@@ -16,6 +28,14 @@ function Home(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: colors.background,
+    },
+    horizontalList: {
+        marginTop: 35,
+        height: 350,
+    },
+    verticalList: {
+        marginTop: 35,
     },
 });
 

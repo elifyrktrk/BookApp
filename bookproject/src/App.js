@@ -3,9 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from "react-native-vector-icons/Feather";
-import {Home,Categories,Library} from './pages';
+import {Home,Categories,Library,CategoryDetail} from './pages';
 import colors from './consts/colors';
-
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -18,11 +17,11 @@ function Tabs() {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'Anasayfa') {
-              iconName = "home"
-            } else if (route.name === 'Kütüphane') {
+            if (route.name === 'Home') {
+              iconName = "home";
+            } else if (route.name === 'Library') {
               iconName = "sliders";
-            } else if (route.name === 'Kategoriler') {
+            } else if (route.name === 'Categories') {
               iconName = "box";
             }
             return <Icon name={iconName} size={size} color={color} />;
@@ -31,11 +30,21 @@ function Tabs() {
         tabBarOptions={{
           activeTintColor: colors.primary ,
           inactiveTintColor: colors.text ,
+          style: {
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+          },
         }}
       >
-        <Tab.Screen name="Anasayfa" component={Home} /> 
-        <Tab.Screen name="Kategoriler" component={Categories} /> 
-        <Tab.Screen name="Kütüphane" component={Library} /> 
+        <Tab.Screen name="Home" component={Home} options={{
+          tabBarLabel: 'Anasayfa',
+        }} /> 
+        <Tab.Screen name="Categories" component={Categories} options={{
+          tabBarLabel: 'Kategoriler',
+        }} /> 
+        <Tab.Screen name="Library" component={Library} options={{
+          tabBarLabel: 'Kütüphane',
+        }} />  
         
       </Tab.Navigator>
   );
@@ -46,6 +55,7 @@ function App(){
     <NavigationContainer>
       <Stack.Navigator headerMode={"none"} >
         <Stack.Screen name="Tabs" component={Tabs} /> 
+        <Stack.Screen name="CategoryDetail" component={CategoryDetail} /> 
       </Stack.Navigator>
     </NavigationContainer>
     
