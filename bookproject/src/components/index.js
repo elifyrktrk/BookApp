@@ -5,5 +5,6 @@ import BookLarge from './BookLarge';
 import ListBookVertical from './ListBookVertical';
 import BookSmall from './BookSmall';
 import CategoryBox from './CategoryBox';
+import ChallengeBox from './ChallengeBox';
 
-export {Header, ListBookHorizontal, WidgetTitle, BookLarge, ListBookVertical, BookSmall, CategoryBox};
+export {Header, ListBookHorizontal, WidgetTitle, BookLarge, ListBookVertical, BookSmall, CategoryBox, ChallengeBox};

@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet ,StatusBar, SafeAreaView, ScrollView} from "react-native";
 import colors from '../consts/colors';
-import {Header, CategoryBox, WidgetTitle, ListBookVertical, ListBookHorizontal} from '../components';
+import {Header, WidgetTitle, ListBookVertical, ListBookHorizontal, CategoryBox, ChallengeBox} from '../components';
 
 function Library(){
     return( 
@@ -10,6 +10,38 @@ function Library(){
             <Header title ={'Kütüphanem'} />
             <ScrollView style={styles.scroll}>
             
+
+            <WidgetTitle title={'Okuma Hedefim'} style={styles.widgetTitle} />
+                <ChallengeBox
+                style={styles.box} 
+                data={{
+                    name:'Bu yıl daha fazlasını okumak için kendinize meydan okuyun!',
+                    count:'50',
+                }}/>
+            <WidgetTitle title={'Kitap listelerim'} style={styles.widgetTitle} />
+                <CategoryBox
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Okuyorum',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'644546464645456',
+                    name:'Okuduklarım',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Okumak istediklerim',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+    
+
             <ListBookVertical 
             library={true}
             widgetTitle={'Favorilerim'} 
@@ -36,7 +68,15 @@ const styles = StyleSheet.create({
     verticalList: {
         marginTop: 35,
     },
-
+    scroll: {
+        paddingHorizontal: 15,
+    },
+    widgetTitle: {
+        marginTop: 35,
+        marginBottom: 18,
+    },
+    
+   
 });
 
 export default Library;
