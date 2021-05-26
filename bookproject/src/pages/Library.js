@@ -1,7 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet ,StatusBar, SafeAreaView, ScrollView} from "react-native";
 import colors from '../consts/colors';
-import {Header, WidgetTitle, ListBookVertical, ListBookHorizontal, CategoryBox, ChallengeBox} from '../components';
+import {Header, WidgetTitle, ListBookVertical, ListBookHorizontal, CategoryBox, ChallengeBox, BookList} from '../components';
 
 function Library(){
     return( 
@@ -19,21 +19,21 @@ function Library(){
                     count:'50',
                 }}/>
             <WidgetTitle title={'Kitap listelerim'} style={styles.widgetTitle} />
-                <CategoryBox
+                <BookList
                 style={styles.box} 
                 data={{
                     _id:'9846ssadfasf4154',
                     name:'Okuyorum',
                     description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
                 }}/>
-                <CategoryBox 
+                <BookList 
                 style={styles.box} 
                 data={{
                     _id:'644546464645456',
                     name:'Okuduklarım',
                     description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
                 }}/>
-                <CategoryBox 
+                <BookList 
                 style={styles.box} 
                 data={{
                     _id:'9846ssadfasf4154',

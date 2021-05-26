@@ -2,12 +2,14 @@ import React from "react";
 import {View, Text, StyleSheet, Image, TouchableOpacity, Alert} from "react-native";
 import {TouchableNativeFeedback} from 'react-native-gesture-handler';
 import colors from '../consts/colors';
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 function BookSmall({style, data, library}){
 
-    function onPressBook(){
-        alert('kitaba tıklandı');
-    }
+    const navigation = useNavigation(); 
 
     function onLongPressBook(){
         if(library){
@@ -29,9 +31,9 @@ function BookSmall({style, data, library}){
         }
     }
     return (
-        <TouchableNativeFeedback 
+        <TouchableOpacity 
             style={[styles.book, {...style}]}
-            onPress={() => onPressBook()}
+            onPress={() => navigation.navigate('Chats')}
             onLongPress={() => onLongPressBook()}>
             <View style={styles.image} >
             <Image 
@@ -48,7 +50,7 @@ function BookSmall({style, data, library}){
             <Text style={styles.description} numberOfLines={3}>
                 {data.description}</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableOpacity>
     );
 }
 

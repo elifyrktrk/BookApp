@@ -1,12 +1,16 @@
 import React from "react";
 import {View, Text, StyleSheet, Image} from "react-native";
-import {TouchableNativeFeedback} from 'react-native-gesture-handler';
+import {TouchableNativeFeedback, TouchableOpacity} from 'react-native-gesture-handler';
 import colors from '../consts/colors';
+import { useNavigation } from '@react-navigation/native';
 
 function BookLarge({style, data}){
+
+    const navigation = useNavigation(); 
+
     return (
         <View style={[styles.book, {...style}]}>
-            <TouchableNativeFeedback>
+            <TouchableOpacity onPress={() => navigation.navigate('Chats')}>
             <View style={styles.image} >
             <Image 
                 resizeMode={'stretch'}
@@ -20,7 +24,7 @@ function BookLarge({style, data}){
                 {data.name}</Text>
             <Text style={styles.author} numberOfLines={1}>
                 {data.author}</Text>
-            </TouchableNativeFeedback>
+            </TouchableOpacity>
         </View>
     );
 }

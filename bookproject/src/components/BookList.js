@@ -3,15 +3,15 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 import colors from '../consts/colors';
 import { useNavigation } from '@react-navigation/native';
 
-function CategoryBox({style, data}){
+function BookList({style, data}){
     const navigation = useNavigation();
     return (
         <TouchableOpacity 
-        onPress={()=>navigation.navigate('CategoryDetail', {data})}
+        onPress={()=>navigation.navigate('Reading', {data})}
         style={[styles.box, {...style}]} 
         activeOpacity={0.6}>
         <Text style={styles.name}>{data.name}</Text>
-        <Text style={styles.count}>{data.count}</Text>
+        <Text style={styles.count}>15 kitap</Text>
         </TouchableOpacity>
     );
 }
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
     },    
 }); 
 
-export default CategoryBox;
+export default BookList;

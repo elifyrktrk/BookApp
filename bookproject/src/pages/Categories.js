@@ -9,19 +9,77 @@ function Categories(){
             <StatusBar barStyle={'light-content'} backgroundColor={colors.primary}/>
             <Header title ={'Kategoriler'} />
             <ScrollView style={styles.scroll}>
-            <WidgetTitle title={'Öne Çıkanlar'} style={styles.widgetTitle} />
+            <WidgetTitle title={'Tüm Kategoriler'} style={styles.widgetTitle} />
                 <CategoryBox 
                 style={styles.box} 
                 data={{
                     _id:'9846ssadfasf4154',
                     name:'Tarih',
+                    count:'10 kitap',
                     description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
                 }}/>
                 <CategoryBox 
                 style={styles.box} 
                 data={{
-                    _id:'7465465153333157',
+                    _id:'9846ssadfasf4154',
                     name:'Roman',
+                    count:'45 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Gizem',
+                    count:'85 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Gezi',
+                    count:'74 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Polisiye',
+                    count:'32 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Korku',
+                    count:'66 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Şiir',
+                    count:'54 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Din',
+                    count:'25 kitap',
+                    description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
+                }}/>
+                <CategoryBox 
+                style={styles.box} 
+                data={{
+                    _id:'9846ssadfasf4154',
+                    name:'Bilim',
+                    count:'10 kitap',
                     description: 'asadsdklfah dshkjaf dasjhjfds djashgkds dasjda',
                 }}/>
             </ScrollView>

@@ -3,28 +3,32 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from "react-native-vector-icons/Feather";
 import colors from '../consts/colors';
 import { useNavigation } from '@react-navigation/native';
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function Header({title, activeGoBack}) {
     const navigation = useNavigation();
     return(
         <View style={styles.header}>
-        {
-            activeGoBack ? (
-                <TouchableOpacity 
-                style={styles.button} 
-                onPress={() => navigation.goBack}> 
-                <Icon name={'chevron-left'} color={colors.header} size={24}/>
-            </TouchableOpacity>
-            ) : (
-                <TouchableOpacity style={styles.button} > 
+        
+
+            <TouchableOpacity style={styles.button} > 
                 <Icon name={'menu'} color={colors.header} size={24}/>
             </TouchableOpacity>
-            )
-        }
+
             <Text style={styles.title}>{title}</Text>
+
+          
+            <TouchableOpacity 
+            onPress={() => navigation.navigate('Login')}
+            style={styles.login}> 
+                <Text>Kaydol</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.button}> 
                 <Icon name={'search'} color={colors.header} size={24}/>
             </TouchableOpacity>
+            
+            
         </View>
     );
 }
@@ -48,6 +52,13 @@ const styles = StyleSheet.create({
         height: 60,
         justifyContent: "center",
         alignItems: "center",
+    },
+    login:{
+        color: colors.header,
+        width: 60,
+        height: 60,
+        justifyContent: "center",
+        alignItems: 'flex-end',
     },
 });
 
